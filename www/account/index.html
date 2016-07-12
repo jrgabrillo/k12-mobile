@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>K12</title>
+
+    <link rel="stylesheet" href="../css/framework7.ios.min.css" media="screen,projection" type="text/css">
+    <link rel="stylesheet" href="../css/framework7.colors.min.css" media="screen,projection" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" media="screen,projection" type="text/css">
+    <link rel="stylesheet" href="../assets/css/materialize.min.css" media="screen,projection" type="text/css">
+    <link rel="stylesheet" href="../assets/css/style.min.css" media="screen,projection" type="text/css">
+</head>
+
+<body>
+    <div id='block-control' class=''></div>
+    <div id="loader-wrapper">
+        <div id="loader"></div>        
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="views" style="z-index: 1 !important; background: url('img/shattered.png');">
+        <div class="view view-main" data-page="index">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center sliding" style="left: 86.5px;"></div>
+                </div>
+            </div>
+            <div class="pages navbar-through toolbar-through">
+                <div data-page="index" class="page" style="background: url('../img/shattered.png');">
+                    <div id='content' class="page-content">
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <a class="very-small right" data-template="display-about" data-context-name="display-about"><i class="mdi-communication-live-help"></i>About</a>
+                    <!-- <a href="http://framework7.io/dist/#" class="link"></a> -->
+                </div>
+            </div>
+        </div>  
+    </div>
+    <script type="text/template7" id="display-about">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left sliding">
+                    <a href="#" class="back link" data-cmd="enable-about" onclick="enable_about()"> <i class="icon icon-back"></i><span>Back</span></a>
+                </div>
+                <div class="center sliding">About</div>
+            </div>
+        </div>
+        <div class="pages">
+            <div data-page="about" class="page">
+                <div class="page-content">
+                    <div class="content-block">
+                        <h1>About this App</h1>
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel commodo massa, eu adipiscing mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ultricies dictum neque, non varius tortor fermentum at. Curabitur auctor cursus imperdiet. Nam molestie nisi nec est lacinia volutpat in a purus. Maecenas consectetur condimentum viverra. Donec ultricies nec sem vel condimentum. Phasellus eu tincidunt enim, sit amet convallis orci. Vestibulum quis fringilla dolor. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript" src="../js/framework7.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../assets/js/process.js"></script>
+    <script type="text/javascript" src="../assets/js/app.js"></script>
+    <script type="text/javascript" src="../assets/js/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins/validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins/validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins/jquery-hashchange/jquery.hashchange.min.js"></script>
+    <script type="text/javascript">
+        mobile.ini();
+        App.init();
+        $(window).load(function() {
+            window.loaded = true;
+        });
+
+        $('a[data-template="display-about"]').click(function(){
+            $(this).addClass('disabled');
+        });
+
+        $('a').click(function(){
+        });
+
+        function enable_about(){
+            $('a[data-template="display-about"]').removeClass('disabled');
+        }
+    </script>
+
+    <div class="hiddendiv common"></div>
+    <div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+    <div class="drag-target" style="right: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+</body>
+</html>
