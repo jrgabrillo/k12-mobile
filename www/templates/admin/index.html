@@ -1,29 +1,119 @@
-<div class="col s12 m5 l5 center-align" style="position: relative; top: 15%;">
-    <div class="flight-state">
-        <h2 class="margin">K12</h2>
-        <p class="small">Grading System</p>
-    </div>
-    <div class="divider"></div>
-    <div class="list-block col offset-s2 s8">
-        <ul>
-            <li>
-                <a href="#cmd=index;content=options_gradeSheet" class="item-link">
-                    <div class="item-content">
-                        <div class="item-inner">
-                            <div class="item-title">Grade Sheet</div>
-                        </div>
+<div class="pages" data-node="page-display">
+    <div data-page="index" class="page" ng-controller="IndexPageController">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link icon-only no-ripple open-panel"><i class="icon icon-bars"></i></a>
+                </div>
+                <div class="center">K12 Gradebook</div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class='page-content'>
+            <div id="particles-js" class="particle-container"></div>
+            <div id='display-content'></div>
+        </div>
+        <div class="panel panel-left panel-cover layout-light theme-black">
+            <div class="panel-bg">
+                <div class='action'>
+                    <a class="link icon-only no-ripple close-panel">
+                        <i class="zmdi zmdi-arrow-forward zmdi-hc-2x"></i>
+                    </a>
+                </div>
+                <div class='primary'>
+                    <img class='' src='img/avatar.jpg'/>
+                </div>
+                <div class="accordion-list">
+                    <div valign="bottom" class="card-header no-border color-white" style="height: 50px;" data-node="display-name">
+                        Rufo N. Gabrillo Jr. -<br> It seems that your app isnt loaded well.
                     </div>
-                </a>
-            </li>
-            <li>
-                <a href="#cmd=index;content=grade-summary" class="item-link">
-                    <div class="item-content">
-                        <div class="item-inner">
-                            <div class="item-title">Summary Grades</div>
+
+                </div>
+            </div>
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <a data-cmd="display-home" class="close-panel">
+                            <div class="item-content">
+                                <div class="item-media"><i class="zmdi zmdi-smartphone-android zmdi-hc-1x"></i></div>
+                                <div class="item-inner"><div class="item-title">Home</div></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-cmd="display-gradingSheet" class="close-panel">
+                            <div class="item-content">
+                                <div class="item-media"><i class="zmdi zmdi-grid zmdi-hc-1x"></i></div>
+                                <div class="item-inner"><div class="item-title">Grading Sheet</div></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-cmd="display-summaryGrading" class="close-panel">
+                            <div class="item-content">
+                                <div class="item-media"><i class="zmdi zmdi-calendar-note zmdi-hc-1x"></i></div>
+                                <div class="item-inner"><div class="item-title">Summary of Grades</div></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="accordion-item">
+                            <div class="accordion-item-toggle">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="zmdi zmdi-settings zmdi-hc-1x"></i></div>
+                                    <div class="item-inner"><div class="item-title">Settings</div></div>
+                                </div>                                    
+                            </div>
+                            <div class="accordion-item-content bg-gray">
+                                <div class="list-block">
+                                    <ul>
+                                        <li>
+                                            <a data-cmd="account-logout" class="close-panel">
+                                                <div class="item-content">
+                                                    <div class="item-media"><i class="zmdi zmdi-lock-outline zmdi-hc-1x"></i></div>
+                                                    <div class="item-inner"><div class="item-title">Log out</div></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-cmd="WelcomeScreen" class="close-panel">
+                                                <div class="item-content">
+                                                    <div class="item-media"><i class="zmdi zmdi-smartphone-setup zmdi-hc-1x"></i></div>
+                                                    <div class="item-inner"><div class="item-title">Welcome Screen</div></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-cmd='forget-ip'>
+                                                <div class="item-content">
+                                                    <div class="item-media"><i class="zmdi zmdi-smartphone-erase zmdi-hc-1x"></i></div>
+                                                    <div class="item-inner"><div class="item-title">Forget IP</div></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>                                
+
+
+
+
+                            </div>  
                         </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <p>K12 Gradebook @2016 - All rights reserved</p>
+            </div>
+        </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('#particles-js').particleground({
+        dotColor: '#ccc',
+        lineColor: '#ccc',
+        particleRadius: 0,
+        density:5000
+    });
+</script>>
+

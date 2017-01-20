@@ -1,0 +1,43 @@
+<div style="position: relative; top: 15%;">
+    <div class="login-screen-title">
+        K12 Gradebook
+    </div><br/><br/>
+    <div class='row no-gutter'>
+        <div class='col-10'></div>
+        <div class='col-80'>
+            <form id='form_getIP' method="get" action="">
+                <div class="list-block">
+                    <div class="item-inner">
+                        <div class="item-title label" style="font-size: 16px;">Username:</div>
+                        <div class="item-input" style='border-bottom:1px solid #fff;'>
+                            <input id='field_username' type="text" name="field_username" data-error=".error_username" placeholder="Enter Username">
+                        </div>
+                        <div class="error_username"></div> 
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label" style="font-size: 16px;">Password: </div>
+                        <div class="item-input" style='border-bottom:1px solid #fff;'>
+                            <input id='field_password' type="text" name="field_password" data-error=".error_password" placeholder="Enter Password">
+                        </div>
+                        <div class="error_password"></div> 
+                    </div>
+                    <p class="buttons-row"><button data-cmd="checkIP" class="button bg-orange color-white waves-effect waves-light" type="submit">Log in</button></p>
+                    <div class="item-inner">
+                        <div class="item-input row">
+                            <div class=" col-10">
+                                <label class="label-switch" style="top: 0px;">
+                                    <input type="checkbox">
+                                    <div class="checkbox"></div>
+                                </label>
+                            </div>  
+                            <div class=" col-80">
+                                <div class="item-title label">Remember me</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>                                
+        </div>
+        <div class='col-10'></div>
+    </div>
+</div>

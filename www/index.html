@@ -1,136 +1,163 @@
 <!DOCTYPE html>
-<html class="pixel-ratio-1 watch-active-state"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html ng-app="myapp">
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>K12 Grading System</title>
-        <link rel="stylesheet" href="css/framework7.ios.min.css" media="screen,projection" type="text/css">
-        <link rel="stylesheet" href="css/framework7.colors.min.css" media="screen,projection" type="text/css">
-        <link rel="stylesheet" href="css/style.css" media="screen,projection" type="text/css">
-        <link rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" type="text/css">
-        <link rel="stylesheet" href="assets/css/style.min.css" media="screen,projection" type="text/css">
-        <style>
-            .input-field div.error{
-                color:#333 !important;
-            }
-        </style>
+        <link rel="shortcut icon" type="image/png" href="res/icon/android/icon.png">
+        <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+        <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/welcomescreen.css">
+        <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="css/plugins/dataTables/dataTables.material.min.css">
     </head>
-    <body>
-        <div class="progress hide-on-med-and-up hide-on-med-and-down" style="margin: 0rem 0 1rem 0;">
-            <div class="indeterminate"></div>
-        </div>
-        <div id="loader-wrapper">
-            <div id="loader"></div>        
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-        </div>
-        <div class="statusbar-overlay"></div>
-        <div class="panel-overlay"></div>
-        <div class="views" style="z-index: 1 !important; background: url('img/shattered.png');">
-            <div class="view view-main " data-page="index">
-                <div class="navbar">
-                    <div class="navbar-inner">
-                        <div class="center sliding" style="left: 86.5px;"></div>
-                    </div>
-                </div>
-                <div class="pages navbar-through toolbar-through">
-                    <div data-page="index" class="page" style="background: url('img/shattered.png');">
-                        <div id='display_getIP' class="page-content">
-                            <div class="col s12 m5 l5 center-align" style="position: relative; top: 15%;">
-                                <div class="flight-state">
-                                    <h2 class="margin">K12</h2>
-                                    <p class="small">Grading System</p>
-                                </div>
-                                <form id='form_getIP' class="formValidate" method="get" action="" style='position:relative; top:40px;'>
-                                    <div class="row">
-                                        <div class="input-field col offset-s2 s8">
-                                            <label for="field_ipAddress">IP Address:</label>
-                                            <a class="very-small right" data-template="ip-help" data-context-name="ip-help"><i class="mdi-communication-live-help"></i>help</a>
-                                            <input id='field_ipAddress' type="text" name="field_ipAddress" data-error=".error_ipAddress">
-                                            <div class="error_ipAddress"></div> 
+    <body class='theme-orange'>
+        <div class="views">
+            <div class="view view-main">
+                <div class="pages">
+                    <div data-page="index" class="page" data-node="page-initialization">
+                        <div class="swiper-container swiper-vertical">
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <span>
+                                        <div style='margin-top:30%;'></div>
+                                        <div class="login-screen-title">
+                                            K12 Gradebook
+                                        </div><br/><br/>
+                                        <div class='row no-gutter'>
+                                            <div class='col-10'></div>
+                                            <div class='col-80'>
+                                                <form id='form_getIP'  method="get" action="">
+                                                    <div class="list-block inputs-list">
+                                                        <div class="item-inner">
+                                                            <div class="item-title label" style="font-size: 16px;">IP Address 
+                                                                <a class="open-popup" data-popup=".ip-help">
+                                                                    <i class="zmdi zmdi-pin-help zmdi-hc-1x"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="item-input" style='border-bottom:1px solid #fff;'>
+                                                                <input id='field_ipAddress' type="text" name="field_ipAddress" data-error=".error_ipAddress" placeholder="Enter IP Address">
+                                                            </div>
+                                                            <div class="error_ipAddress text-right"></div> 
+                                                        </div>
+                                                        <p class="buttons-row"><a data-cmd="getIP" class="button button-fill color-orange no-ripple" type="submit">Access</a></p>
+                                                    </div>
 
-                                            <button class="btn-flat blue waves-effect waves-light" type="submit">Access</button>
+                                                    <div class="item-inner">
+                                                        <div class="item-input row">
+                                                            <div class=" col-10">
+                                                                <label class="label-switch" style="top: 0px;">
+                                                                    <input type="checkbox" name="field_rememberIPAddress">
+                                                                    <div class="checkbox"></div>
+                                                                </label>
+                                                            </div>  
+                                                            <div class=" col-80">
+                                                                <div class="item-title label">Remember IP address</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>                                
+                                            </div>
+                                            <div class='col-10' id="test-mobile"></div>
                                         </div>
-<!--                                         <div class="input-field col offset-s2 s8">
-                                            access button
-                                            <button class="btn-flat blue waves-effect waves-light" type="submit">Access</button>
+                                    </span>
+                                </div>
+                                <div class="swiper-slide">
+                                    <span>
+                                        <div style='margin-top:30%;'></div>
+                                        <div class="login-screen-title">
+                                            K12 Gradebook
+                                        </div><br/><br/>
+                                        <div class='row no-gutter'>
+                                            <div class='col-10'></div>
+                                            <div class='col-80'>
+                                                <form id='form_login' method="get" action="">
+                                                    <div class="list-block inputs-list">
+                                                        <div class="item-inner">
+                                                            <div class="item-title label" style="font-size: 16px;">Username:</div>
+                                                            <div class="item-input" style='border-bottom:1px solid #fff;'>
+                                                                <input id='field_username' type="text" name="field_username" data-error=".error_username" placeholder="Enter Username">
+                                                            </div>
+                                                            <div class="error_username"></div> 
+                                                        </div>
+                                                        <div class="item-inner">
+                                                            <div class="item-title label" style="font-size: 16px;">Password:</div>
+                                                            <div class="item-input" style='border-bottom:1px solid #fff;'>
+                                                                <input id='field_password' type="password" name="field_password" data-error=".error_password" placeholder="Enter Password">
+                                                            </div>
+                                                            <div class="error_password"></div> 
+                                                        </div>
+                                                        <p class="buttons-row"><a data-cmd="checkIP" class="button button-fill color-orange no-ripple" type="submit">Log in</a></p>
+                                                        <div class="item-inner">
+                                                            <div class="item-input row">
+                                                                <div class=" col-10">
+                                                                    <label class="label-switch" style="top: 0px;">
+                                                                        <input type="checkbox" name="field_rememberLogin">
+                                                                        <div class="checkbox"></div>
+                                                                    </label>
+                                                                </div>  
+                                                                <div class=" col-80">
+                                                                    <div class="item-title label">Remember me</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>                                
+                                            </div>
+                                            <div class='col-10' id='test-mobile2'></div>
                                         </div>
- -->                                    </div>
-                                </form>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <div id='display_login' class="page-content">
-                            <div class="col s12 m5 l5 center-align" style="position: relative; top: 15%;">
-                                <div class="flight-state">
-                                    <h2 class="margin">K12</h2>
-                                    <p class="small">Grading System</p>
-                                </div>
-                                <form id='form_login' class="formValidate" method="get" action="" style='position:relative; top:40px;'>
-                                    <div class="row">
-                                        <div class="input-field col offset-s2 s8">
-                                            <label for="field_loginUsername">Username:</label>
-                                            <input id='field_loginUsername' type="text" name="field_loginUsername" data-error=".error_loginUsername">
-                                            <div class="error_loginUsername"></div> 
-
-                                            <br/>
-                                            <label for="field_loginPassword">Password:</label>
-                                            <input id='field_loginPassword' type="password" name="field_loginPassword" data-error=".error_loginPassword">
-                                            <div class="error_loginPassword"></div> 
-                                            
-                                            <br/>
-                                            <button class="btn-flat blue waves-effect waves-light" type="submit">Log in</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
-        <script type="text/template7" id="ip-help">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <div class="left sliding">
-                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+        <div class="popup loader">
+            <div style="position: relative; top: 15%;">
+                <div class="login-screen-title">
+                    <img width="200px" src="img/logo.png"/>
+                </div><br/><br/>
+                <div class='row no-gutter'>
+                    <div class='col-10'></div>
+                    <div class='col-80'>
+                        <p class="text-center">Loading...</p>
                     </div>
-                    <div class="center sliding">What is IP Address</div>
+                    <div class='col-10'></div>
                 </div>
-            </div>
-            <div class="pages">
-                <div data-page="about" class="page">
-                    <div class="page-content">
-                        <div class="content-block">
-                            <h1>IP Address</h1>
-                            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel commodo massa, eu adipiscing mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ultricies dictum neque, non varius tortor fermentum at. Curabitur auctor cursus imperdiet. Nam molestie nisi nec est lacinia volutpat in a purus. Maecenas consectetur condimentum viverra. Donec ultricies nec sem vel condimentum. Phasellus eu tincidunt enim, sit amet convallis orci. Vestibulum quis fringilla dolor. </p>
-                        </div>
+            </div>                          
+        </div>
+        <div class="popup developer">
+            <div style="position: relative; top: 15%;">
+                <div class="login-screen-title">
+                    <img width="200px" src="img/logo.png"/>
+                </div><br/><br/>
+                <div class='row no-gutter'>
+                    <div class='col-10'></div>
+                    <div class='col-80'>
+                        <p class="text-center">Loading...</p>
                     </div>
+                    <div class='col-10'></div>
                 </div>
-            </div>
-        </script>
-        <script type="text/javascript" src="js/framework7.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-        <script type="text/javascript" src="assets/js/jquery-2.1.1.js"></script>
-        <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-        <script type="text/javascript" src="assets/js/process.js"></script>
-        <script type="text/javascript" src="assets/js/app.js"></script>
-        <script type="text/javascript" src="assets/js/perfect-scrollbar.min.js"></script>
-        <script type="text/javascript" src="assets/js/plugins.min.js"></script>
-        <script type="text/javascript" src="assets/js/plugins/validation/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="assets/js/plugins/validation/additional-methods.min.js"></script>
-        <script type="text/javascript">
-        mobile.ini();
-        mobile.get_IP();
-        mobile.login();
-
-        // // remove me
-
-        //     Materialize.toast('Success',1000,'',function(){
-        //         $('#display_getIP').slideUp(200);
-        //     });
-        // // remove me
-
-        </script>
+            </div>                          
+        </div>
     </body>
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.js"></script>
+    <script type="text/javascript" src="js/welcomescreen.js"></script>
+    <script type="text/javascript" src="js/myapp/pages/IndexPageController.js"></script>
+    <script type="text/javascript" src="js/myapp/init.js"></script>
+    <script type="text/javascript" src="js/process.js"></script>
+    <script type="text/javascript" src="js/jquery.particleground.min.js"></script>
+    <script type="text/javascript" src="js/defiant.min.js"></script>
+    <script type="text/javascript" src="js/plugins/validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/plugins/validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables/dataTables.material.min.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables/dataTables.fixedcolumns.js"></script>
 </html>
