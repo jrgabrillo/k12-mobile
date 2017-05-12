@@ -38,17 +38,17 @@ myapp.pages.IndexPageController = function (myapp, $$) {
       },
       {
         id: 'slide1',
-        picture: '<div class="tutorialicon color-red">1</div>',
+        picture: '<div class="tutorialicon color-red"><img width="200px" src="'+logo+'"/></div>',
         text: 'Enter your Server\'s IP Address. If you do not know the server\'s IP Address ask your system administrator.'
       },
       {
         id: 'szlide2',
-        picture: '<div class="tutorialicon color-red">2</div>',
+        picture: '<div class="tutorialicon color-red"><img width="200px" src="'+logo+'"/></div>',
         text: 'Login to your account. Just like in web version, login to your account to view your student\'s grades'
       },
       {
         id: 'slide3',
-        picture: '<div class="tutorialicon color-red">3</div>',
+        picture: '<div class="tutorialicon color-red"><img width="200px" src="'+logo+'"/></div>',
         text: 'Thanks! You are now ready.<br><br><a href="#" class="button button-raised button-fill color-orange ripple-white tutorial-close-btn">Start</a>\n\n<a data-cmd="never-show-welcome-screen" style="position: relative;top: 20px;">Dont show this again</a>'
       }
     ],

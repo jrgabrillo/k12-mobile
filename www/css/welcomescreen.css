@@ -60,3 +60,44 @@
 html.with-statusbar-overlay .welcomescreen-container{
     top: 20px;
 }
+
+i.icon:before{
+    max-height: 30px;
+    max-width: 30px;
+    overflow: hidden;
+    color: transparent;
+    content: ".....";
+}
+i.archive:before{
+    background: url(../img/icons/archive.png) no-repeat;
+    background-size: cover;
+}
+i.dashboard:before{
+    background: url(../img/icons/dashboard.png) no-repeat;
+    background-size: cover;
+}
+i.gradeSheet:before{
+    background: url(../img/icons/gradeSheet.png) no-repeat;
+    background-size: cover;
+}
+i.sectionManager:before{
+    background: url(../img/icons/sectionManager.png) no-repeat;
+    background-size: cover;
+}
+i.settings:before{
+    background: url(../img/icons/settings.png) no-repeat;
+    background-size: cover;
+}
+i.students:before{
+    background: url(../img/icons/students.png) no-repeat;
+    background-size: cover;
+}
+i.summary:before{
+    background: url(../img/icons/summary.png) no-repeat;
+    background-size: cover;
+}
+i.teacher:before{
+    background: url(../img/icons/teacher.png) no-repeat;
+    background-size: cover;
+}
+

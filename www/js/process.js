@@ -200,6 +200,7 @@ Framework7.prototype.plugins.k12 = function (app, params) {
 			$$('a[data-cmd="getIP"]').on('click',function(){
 				$$(this).addClass('disabled');
 				var form = app.formToJSON('#form_getIP');
+				console.log(form);
 	            if(form['field_rememberIPAddress'].length == 1){
 			        localStorage.setItem('saved-ip',form['field_ipAddress']);
 	            }
@@ -211,6 +212,7 @@ Framework7.prototype.plugins.k12 = function (app, params) {
 		};
 		var access_getIP = function(ip){
 			var ajax = request('http://'+ip+'/k12/test.file','');
+			console.log(ajax);
 			if(ajax == 200){
 				console.log(ajax);
 				notification("k12","Access granted",false,2000,true,function(){
@@ -274,6 +276,7 @@ Framework7.prototype.plugins.k12 = function (app, params) {
 				$$(this).addClass('disabled');
 				var form = app.formToJSON('#form_login');
                 var field = JSON.stringify([{'name':'field_username','value':form['field_username']},{'name':'field_password','value':form['field_password']}]);
+	            console.log(field);
 	            if(form['field_rememberLogin'].length == 1){
 			        localStorage.setItem('saved-login',field);
                 }
@@ -288,6 +291,7 @@ Framework7.prototype.plugins.k12 = function (app, params) {
 				var data = JSON.parse(form);
 				var nice_ip = localStorage.getItem('nice-ip');
 				var ajax = do_ajax('http://'+nice_ip+'/'+processor+'?login',data);
+				console.log(ajax.responseText);
 				localStorage.setItem('user-details',ajax.responseText);
 				if(ajax.responseText != 0){
 					notification("k12","Success",false,2000,true,function(){
