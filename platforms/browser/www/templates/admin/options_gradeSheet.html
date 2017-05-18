@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-header">Grade Sheet</div>
+    <div class="card-content">
+        <div class="card-content-inner">
+			<form class="col offset-s3 s6" id='form_gradesheet'>
+			    <div class='row no-gutter'>
+			        <div class='col-10'></div>
+			        <div class='col-80'>
+						<div class="list-block">
+							<ul> 
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Year: <div class="error_year"></div>	</div>
+											<div class="item-input">
+												<select class="select-dropdown" id='field_year' name="field_year" data-error=".error_year">
+													<option disabled='' selected>Choose subject</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Section: <div class="error_section"></div></div>
+											<div class="item-input">
+												<select class="select-dropdown" id='field_section' name="field_section" data-error=".error_section" disabled>
+													<option disabled='' selected>Choose subject</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Subject: <div class="error_subject"></div></div>
+											<div class="item-input">
+												<select class="select-dropdown" id='field_subject' name="field_subject" data-error=".error_subject" disabled>
+													<option disabled='' selected>Choose subject</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<p class="buttons-row"><a data-cmd="submit-form" class="button button-fill color-orange no-ripple" type="submit">Show grade sheet</a></p>
+								</li>
+							</ul>
+						</div>
+			        </div>
+			        <div class='col-10'></div>
+			    </div>
+			</form>
+        </div>
+    </div>
+</div>

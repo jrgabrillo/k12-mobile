@@ -1,0 +1,103 @@
+.welcomescreen-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 10500;
+  color: #666;
+  font-size: 16px;
+}
+
+.welcomescreen-closebtn{
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  text-align: right;
+  z-index: 9998;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.welcomescreen-swiper {
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
+
+.welcomescreen-picture{
+  width: 100%;
+  text-align: center;
+  margin-top: 30%;
+}
+
+.welcomescreen-text {
+  position:absolute;
+  bottom: 65px;
+  left: 0;
+  right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align:center;
+}
+.welcomescreen-content {
+  padding: 15px;
+}
+
+.welcomescreen-container .swiper-pagination-bullet{
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.welcomescreen-container .swiper-pagination-bullet-active{
+  background: #fff;
+}
+
+.swiper-container-horizontal>.swiper-pagination{
+  bottom: 20px;
+}
+
+html.with-statusbar-overlay .welcomescreen-container{
+    top: 20px;
+}
+
+i.icon:before{
+    max-height: 30px;
+    max-width: 30px;
+    overflow: hidden;
+    color: transparent;
+    content: ".....";
+}
+i.archive:before{
+    background: url(../img/icons/archive.png) no-repeat;
+    background-size: cover;
+}
+i.dashboard:before{
+    background: url(../img/icons/dashboard.png) no-repeat;
+    background-size: cover;
+}
+i.gradeSheet:before{
+    background: url(../img/icons/gradeSheet.png) no-repeat;
+    background-size: cover;
+}
+i.sectionManager:before{
+    background: url(../img/icons/sectionManager.png) no-repeat;
+    background-size: cover;
+}
+i.settings:before{
+    background: url(../img/icons/settings.png) no-repeat;
+    background-size: cover;
+}
+i.students:before{
+    background: url(../img/icons/students.png) no-repeat;
+    background-size: cover;
+}
+i.summary:before{
+    background: url(../img/icons/summary.png) no-repeat;
+    background-size: cover;
+}
+i.teacher:before{
+    background: url(../img/icons/teacher.png) no-repeat;
+    background-size: cover;
+}
+

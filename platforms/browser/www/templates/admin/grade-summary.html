@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-header">Summary Grade Sheet</div>
+    <div class="card-content">
+        <div class="card-content-inner">
+			<form class="col s12" id='form_gradesheet'>
+			    <div class='row no-gutter'>
+			        <div class='col-10'></div>
+			        <div class='col-80'>
+						<div class="list-block">
+							<ul> 
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Year: <div class="error_year"></div></div>
+											<div class="item-input">
+												<select class="select-dropdown" id='field_year' name="field_year" data-error=".error_year">
+													<option disabled='' selected>Choose subject</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Section: <div class="error_section"></div></div>
+											<div class="item-input">
+												<select class="select-dropdown" id='field_section' name="field_section" data-error=".error_section" disabled>
+													<option disabled='' selected>Choose subject</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<p class="buttons-row"><a data-cmd="submit-form" class="button button-fill color-orange no-ripple" type="submit">Show grade sheet</a></p>
+								</li>
+							</ul>
+						</div>
+			        </div>
+			        <div class='col-10'></div>
+				</div>
+			</form>
+		    <div class="row">
+            	<div id='display_studentList'><h5 class='center-align grey-text lighten-3'><br/><br/><br/><i>Load Summary of Grades</i></h5></div>
+		    </div>
+        </div>
+    </div>
+</div> 
+<script type="text/javascript">
+	list_summaryGrade();
+</script>
