@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.k12.RufoNGabrilloJr" version="3.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.k12.RufoNGabrilloJr" version="4.1">
   <name>k12-mobile</name>
   <description>K12 gradebook is a multi-platform grade computation software.</description>
   <author href="https://github.com/jrGabrillo/" email="rufo.gabrillo@gmail.com">Rufo N. Gabrillo Jr.</author>
